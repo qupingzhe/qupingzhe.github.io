@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html>
-	{% include head.html %}
-	<body>
+{% include head.html %}
+<body>
     {% include header.html %}
-		<div class = "wrap" >
-			<div class='div_left'>
-				<div class="div_left_top">
-					<img src="{{ "/assets/photo.jpg" }}" /><br>
-					<b><center >隐藏在画中的落叶</center></b>
-					文章：{{ site.posts.size }}篇
-				</div>
-				<div class="div_left_bottom">
-					{% for category in site.categories %}
-					<!--
-					<a href="{{ "/test.html" | prepend: site.baseurl | append: "?type=" | append: category.first }}">
-					-->
-					<a href="{{ "/" | prepend: site.baseurl |append: category.first}}.html">
-						{% for onePost in site.posts %}
-							{% if onePost.categories.first == category.first %}
-								{{ onePost.tags }}
-								{% break %}
-							{% endif %}
-						{% endfor %}
-						( {{ category.last.size }} )
-					<br></a>
-					{% endfor %}
-				</div>
+	<div class = "wrap" >
+		<div class='div_left'>
+			<div class="div_left_top">
+				<img width="100%" src="{{ "/assets/photo.jpg" }}" />
+				<b><center >隐藏在画中的落叶</center></b>
+				文章：{{ site.posts.size }}篇
 			</div>
-			<!--
-			<div class="div_right">left_rig<br>hahaha<br></div>
-			-->
-			<div class="div_main">
-				{{ content }}
+			<div class="div_left_bottom">
+				<a href="{{ "/all_posts" | prepend: site.baseurl }}.html"> 所有文章( {{ site.posts.size }} )<br></a>
+				{% for category in site.categories %}
+					<a href="{{ "/" | prepend: site.baseurl |append: category.first}}.html">
+					{% for onePost in site.posts %}
+						{% if onePost.categories.first == category.first %}
+							{{ onePost.tags }}
+							{% break %}
+						{% endif %}
+					{% endfor %}
+				( {{ category.last.size }} ) <br></a>
+				{% endfor %}
 			</div>
 		</div>
+		<!--
+		<div class="div_right">left_rig<br>hahaha<br></div>
+		-->
+		<div class="div_main">
+			{{ content }}
+		</div>
+	</div>
 	{% include footer.html %}
-	</body>
+</body>
 </html>
