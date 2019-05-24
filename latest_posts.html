@@ -36,15 +36,13 @@ title: 近期文章
             <ul>
         {% endif %}
 
-        <li>
-            <div class="well well-sm">
+        <li><div class="well well-sm">
             <span class="label label-info">
                 {{ post.date | date: "%Y-%m-%d" }}
             </span>
              &raquo; 
             <a href="{{ post.url }}">{{ post.title }}</a>
-            </div>
-        </li>
+        </div></li>
 
         {% if forloop.last %}
             </ul>

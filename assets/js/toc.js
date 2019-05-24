@@ -4,7 +4,7 @@
     var defaults = {
       noBackToTopLinks: false,
       title: '<i>目录</i>',
-      minimumHeaders: 3,
+      minimumHeaders: 0,
       headers: 'h2, h3, h4',
       listType: 'ul', // values: [ol|ul]
       showEffect: 'show', // values: [show|slideDown|fadeIn|none]

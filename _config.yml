@@ -27,8 +27,8 @@ markdown: kramdown
     #syntax_highlighter: rouge
 #theme: minima
 #highlighter: rouge
-plugins:
-  - jekyll-feed
+#plugins:
+  #- jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
