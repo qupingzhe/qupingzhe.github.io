@@ -16,9 +16,9 @@
 title: Qu Pingzhe's Blog
 author: Qu Pingzhe
 #email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-    技术博客
+description: 个人博客
 baseurl: "" # the subpath of your site, e.g. /blog
+url: https://qupingzhe.github.io
 github_username:  qupingzhe
 # Build settings
 markdown: kramdown
