@@ -1,3 +1,3 @@
-# zjphqpz.github.io
+# qupingzhe.github.io
 This is my blog.  
-[zjphqpz.github.io](https://zjphqpz.github.io)
+[qupingzhe.github.io](https://qupingzhe.github.io)

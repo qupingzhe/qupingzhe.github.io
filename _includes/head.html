@@ -1,12 +1,32 @@
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="viewport" content="width=device-width">
+    <!--<meta name="viewport" content="width=device-width">-->
     <meta name="description" content="{{ site.description }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!--<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">-->
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="{{ site.ASSETS }}/js/bootstrap.min.js"></script>
+    <script src="{{ site.ASSETS }}/js/toc.js"></script>
+    <script src="{{ site.ASSETS }}/js/my-main.js"></script>
+
+    <link rel="stylesheet" href="{{ site.ASSETS }}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ site.ASSETS }}/css/font-awesome.css" /> 
+    <link rel="stylesheet" href="{{ site.ASSETS }}/css/bootstrap-social.css" />
+
+    <!-- 主题颜色-->
+    <!--<link rel="stylesheet" href="{{ site.ASSETS }}/css/colors-dark.css" />-->
+    <link rel="stylesheet" href="{{ site.ASSETS }}/css/colors-light.css" />
+    <!--<link rel="stylesheet" href="{{ site.ASSETS }}/css/colorful.css" />-->
+
+    <!-- 代码颜色-->
+    <link rel="stylesheet" href="{{ site.ASSETS }}/css/solarized.dark.css" />
+    <!--<link rel="stylesheet" href="{{ site.ASSETS }}/css/solarized.light.css" />-->
+
+
+    <link rel="stylesheet" href="{{ site.ASSETS }}/css/my-main.css" />
 
 </head>

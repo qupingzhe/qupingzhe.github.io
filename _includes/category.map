@@ -1,0 +1,11 @@
+{% if include.category == "algorithm" %}
+    算法
+{% elsif include.category == "editor" %}
+    编辑器
+{% elsif include.category == "introduction_to_algorithms" %}
+    算法导论
+{% elsif include.category == "leetcode" %}
+    LeetCode
+{% else %}
+    {{ include.category }}
+{% endif %}

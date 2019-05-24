@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-<body>
-    {% include header.html %}
-	<div class = "wrap" >
-		<div class='div_left'>
-			<div class="div_left_top">
-				<img width="100%" src="{{ "/assets/photo.jpg" }}" />
-				<b><center >隐藏在画中的落叶</center></b>
-				文章：{{ site.posts.size }}篇
-			</div>
-			<div class="div_left_bottom">
-				<a href="{{ "/all_posts" | prepend: site.baseurl }}.html"> 所有文章( {{ site.posts.size }} )<br></a>
-				{% for category in site.categories %}
-					<a href="{{ "/" | prepend: site.baseurl |append: category.first}}.html">
-					{% for onePost in site.posts %}
-						{% if onePost.categories.first == category.first %}
-							{{ onePost.tags }}
-							{% break %}
-						{% endif %}
-					{% endfor %}
-				( {{ category.last.size }} ) <br></a>
-				{% endfor %}
-			</div>
-		</div>
-		<!--
-		<div class="div_right">left_rig<br>hahaha<br></div>
-		-->
-		<div class="div_main">
-			{{ content }}
-		</div>
-	</div>
-	{% include footer.html %}
+<body style="padding-top:60px" data-spy="scroll" data-target="#myScrollspy">
+    <div class="container-fiuled">
+        {% include header.html %}
+        <div class = "row" >
+            <div id="info-col" class='col-sm-3 sidebar-outer'>
+                <div class="row sidebar">
+                    {% include info.html %}
+                </div>
+            </div>
+
+            <div class="col-sm-2 col-sm-push-7 sidebar-outer" id="myScrollspy">
+                <div class="row sidebar pre-scrollable" style="max-height: 80%;">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <div id="pre-toc"><div class="panel panel-default">
+                        <div class="panel-body"><div id="toc"></div></div>
+                    </div></div>
+                </div>
+            </div>
+            <script>$("#pre-toc").hide()</script>
+            <div class="col-sm-7 col-sm-pull-2">{{ content }}</div>
+        </div>
+        {% include footer.html %}
+    </div>
+{% include tag_search.html allTag=site.tags %}
 </body>
 </html>

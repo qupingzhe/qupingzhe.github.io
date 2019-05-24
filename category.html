@@ -1,0 +1,113 @@
+---
+layout: default
+---
+
+{% assign allCategory = "" %}
+
+{% capture allCategory %}
+{% for category in site.categories %}
+    {% assign tmp = " " | append: category.first %}
+    {{ allCategory | append: tmp }}
+{% endfor %}
+{% endcapture %}
+
+{% assign categoryList = allCategory | split: " " %}
+
+{% assign last_category = nil %}
+{% for category in categoryList%}
+{% assign next_category = categoryList[forloop.index] %}
+<div id='{{ category }}'>
+    <div class="page-heading">
+        <h1>{% include category.map category=category %}</h1>
+    </div>
+    <div class="row">
+    {% assign size = site.categories[category].size  %}
+    {% for i in (0..size) %}
+        {% if i == size %}{% break %}{% endif %}
+        {% assign page = site.categories[category][i] %}
+        <div class="col-sm-12">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <div id="{{ category }}-{{ page.id }}" name="toc-target-{{ category }}">
+                    {{ page.title }}
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <!--{{ page.content | truncate: 108 }}-->
+                    {{ page.excerpt }}
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            {{ page.date | date: "%B %-d, %Y" }}
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3"><a class="btn btn-default" href="{{ page.url | prepend: site.baseurl }}">详情</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% assign tmp = i | modulo: 1 %}
+        {% if tmp == 0 %}
+    </div>
+    <div class="row">
+        {% endif %}
+    {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            上一分类：
+            {% if last_category == nil %}
+                无
+            {% else %}
+                <a href='/category?name={{ last_category }}'>{% include category.map category=last_category %}</a>
+            {% endif %}
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            下一分类：
+            {% if next_category == nil %}
+                无
+            {% else %}
+                <a href='/category?name={{ next_category }}'>{% include category.map category=next_category %}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!--<div class="toc-target1" id="toc-{{ category }}">-->
+<!--<ul>-->
+    <!--{% for i in (0..size) %}-->
+        <!--{% if i == size %}{% break %}{% endif %}-->
+        <!--{% assign page = site.categories[category][i] %}-->
+        <!--<li><a href="#{{ category }}-{{ page.title }}">{{ page.title }}</a></li>-->
+    <!--{% endfor %}-->
+<!--</ul>-->
+<!--</div>-->
+<script>
+    $("#{{ category }}").hide();
+    $("#toc-{{ category }}").hide();
+</script>
+{% assign last_category = category %}
+{% endfor %}
+</div>
+<script>
+var result = GetQueryString("name");
+if (result != null) {
+    $("#" + result).show();
+
+    $("#pre-toc").show();
+    var settings = {
+      noBackToTopLinks: false,
+      title: '<i>目录</i>',
+      minimumHeaders: -10,
+      headers: 'div[name="toc-target-' + result + '"]',
+      //headers: 'h2',
+      listType: 'ul', // values: [ol|ul]
+      showEffect: 'show', // values: [show|slideDown|fadeIn|none]
+      showSpeed: 'slow', // set to 0 to deactivate effect
+      classes: { list: '', item: '' }
+    };
+    $('#toc').toc(settings);
+}
+</script>

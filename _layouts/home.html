@@ -1,13 +1,47 @@
----
-layout: default
----
-<div class="post">
-  <header class="post-header">
-    <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body style="padding-top:60px" data-spy="scroll" data-target="#myScrollspy">
+    <div class="container-fiuled">
+        {% include header.html %}
+        <div class = "row" >
+            <div id="info-col" class='col-sm-3 sidebar-outer'>
+                <div class="row sidebar">
+                    {% include info.html %}
+                </div>
+            </div>
 
-  <article class="post-content">
-  {{ content }}
-  </article>
-</div>
+            <div class="col-sm-2 col-sm-push-7 sidebar-outer" id="myScrollspy">
+                <div class="row">
+                <div class="col-xs-4">
+                    <div class="page-header">
+                        <center>
+                    <h1 style="font-family: 王羲之;writing-mode: vertical-rl;">
+                        {{ page.title2 }}
+                    </h1>
+                        </center>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="page-header">
+                        <center>
+                    <h1 style="font-family: 王羲之;writing-mode: vertical-rl;">
+                        {{ page.title1 }}
+                        </center>
+                    </h1>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-7 col-sm-pull-2">
+                <h1 class="page-header"></h1>
+                {{ content }}
+            </div>
+        </div>
+        {% include footer.html %}
+    </div>
+{% include tag_search.html allTag=site.tags %}
+</body>
+</html>

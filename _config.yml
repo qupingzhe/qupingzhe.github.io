@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: 技术博客
+author: Qu Pingzhe
 #email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
     技术博客
@@ -22,9 +23,16 @@ url: "http://blog.qupingzhe.me" # the base hostname & protocol for your site, e.
 github_username:  zjphqpz
 # Build settings
 markdown: kramdown
-theme: minima
-gems:
+#kramdown:
+    #syntax_highlighter: rouge
+#theme: minima
+#highlighter: rouge
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
+color: RGB(234, 234, 234)
+#excerpt_separator: "<!--more-->"
+ASSETS: /assets
+LATEST_SIZE: 4

@@ -1,15 +1,66 @@
 ---
 layout: default
-title: 目录
+title: 所有文章
 ---
 
-<div class="home">
-	<div class="post-header"><h1>目录</h1></div>
-	<ul class="posts">
+<div class="panel">
+    <div class="panel-heading">
+        <h1>所有文章</h1>
+        <hr/>
+    </div>
+    <div class="panel-body">
+    {% assign allPost = site.posts |sort: "date" | reverse %}
     {% for post in site.posts %}
-		<li> <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-		<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-		</li>
+        {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+        {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
+        {% capture last_year %}{{ post.next.date | date: "%Y" }}{% endcapture %}
+        {% capture last_month %}{{ post.next.date | date: "%B" }}{% endcapture %}
+
+        {% if this_year != last_year or this_month != last_month %}
+            {% unless forloop.first %}
+            </ul>
+            {% endunless %}
+        {% endif %}
+
+        {% if this_year != last_year %}
+            <h2 id="{{this_year}}">{{this_year}}</h2>
+            <h3 id="{{this_year}}-{{this_month}}">{{this_month}}</h3>
+            <!--<ul class="list-group">-->
+            <ul>
+        {% elsif this_month != last_month %}
+            <h3 id="{{this_year}}-{{this_month}}">{{this_month}}</h3>
+            <!--<ul class="list-group">-->
+            <ul>
+        {% endif %}
+
+        <li><div class="well well-sm">
+            <span class="label label-info">
+                {{ post.date | date: "%Y-%m-%d" }}
+            </span>
+             &raquo; 
+            <a href="{{ post.url }}">{{ post.title }}</a>
+        </div></li>
+
+        {% if forloop.last %}
+            </ul>
+        {% endif %}
     {% endfor %}
-	</ul>
-<div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#pre-toc").show();
+    var settings = {
+      noBackToTopLinks: false,
+      title: '<i>目录</i>',
+      minimumHeaders: 3,
+      headers: 'h1, h2',
+      listType: 'ul', // values: [ol|ul]
+      showEffect: 'show', // values: [show|slideDown|fadeIn|none]
+      showSpeed: 'slow', // set to 0 to deactivate effect
+      classes: { list: '', item: '' }
+    };
+    $('#toc').toc();
+});
+</script>
