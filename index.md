@@ -48,12 +48,11 @@ title2: 一蓑烟雨任平生。
 
 <script>
 for (var i = 0; i < 3; i++) {
-    var hideId = "#picture" + i + "-simple";
-    var showId = "#picture" + i;
-    $(showId).onload = function(){
-        $(hideId).hide();
-        $(showId).show();
-    };
+    $("#picture" + i).on('load', function(){
+        var sId = "#" + $(this).attr('id');
+        $(sId + "-simple").hide();
+        $(sId).show();
+    });
 }
 </script>
 
