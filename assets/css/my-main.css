@@ -30,22 +30,25 @@ hr {
 
 @font-face{
     font-family: '颜真卿';
-    src: url("../fonts/颜体书法.woff2") format("woff2"),
-    url("../fonts/颜体书法.woff") format("woff"),
-    url('../fonts/颜体书法.ttf') format("truetype");
     /*src: url("../fonts/颜体书法.woff2") format("woff2"),*/
-    /*src: url("../fonts/颜体书法.woff") format("woff"),*/
-    /*src: url('../fonts/颜体书法.ttf') format("truetype");*/
+    /*url("../fonts/颜体书法.woff") format("woff"),*/
+    /*url('../fonts/颜体书法.ttf') format("truetype");*/
+    src: url("../fonts/颜体书法-simple.woff2") format("woff2"),
+    url("../fonts/颜体书法-simple.woff") format("woff"),
+    url('../fonts/颜体书法-simple.ttf') format("truetype");
 }
 
 @font-face{
     font-family: '王羲之';
-    src: url("../fonts/王羲之书法字体.woff2") format("woff2"),
-    url("../fonts/王羲之书法字体.woff") format("woff"),
-    url('../fonts/王羲之书法字体.ttf') format("truetype");
+    src: url("../fonts/颜体书法-simple.woff2") format("woff2"),
+    url("../fonts/颜体书法-simple.woff") format("woff"),
+    url('../fonts/颜体书法-simple.ttf') format("truetype");
     /*src: url("../fonts/王羲之书法字体.woff2") format("woff2"),*/
-    /*src: url("../fonts/王羲之书法字体.woff") format("woff"),*/
-    /*src: url('../fonts/王羲之书法字体.ttf') format("truetype");*/
+    /*url("../fonts/王羲之书法字体.woff") format("woff"),*/
+    /*url('../fonts/王羲之书法字体.ttf') format("truetype");*/
+    /*src: url("../fonts/王羲之书法字体-simple.woff2") format("woff2"),*/
+    /*url("../fonts/王羲之书法字体-simple.woff") format("woff"),*/
+    /*src: url('../fonts/王羲之书法字体-simple.ttf') format("truetype");*/
 }
 
 @font-face{
