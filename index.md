@@ -54,5 +54,13 @@ for (var i = 0; i < 3; i++) {
         $(sId).show();
     });
 }
+                      
+for (var i = 0; i < 3; i++) {
+    var sId = "#picture" + i;
+    if ($(sId).complete || $(sId).height() > 0) {
+        $(sId + "-simple").hide();
+        $(sId).show();
+    }
+}
 </script>
 
