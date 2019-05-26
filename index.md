@@ -17,15 +17,21 @@ title2: 一蓑烟雨任平生。
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
         <div class="item active">
-            <img src="{{ site.ASSETS }}/images/上古卷轴5.jpg" alt="Third slide">
+            <img id="picture0-simple" src="{{ site.ASSETS }}/images/上古卷轴5-simple.jpg" alt="Third slide">
+            <img id="picture0" src="{{ site.ASSETS }}/images/上古卷轴5.jpg" alt="Third slide">
+            <script>$("#picture0").hide()</script>
             <div class="carousel-caption">星空-上古卷轴</div>
         </div>
         <div class="item">
-            <img src="{{ site.ASSETS }}/images/华山.jpg" alt="First slide">
+            <img id="picture1-simple" src="{{ site.ASSETS }}/images/华山-simple.jpg" alt="First slide">
+            <img id="picture1" src="{{ site.ASSETS }}/images/华山.jpg" alt="First slide">
+            <script>$("#picture1").hide()</script>
             <div class="carousel-caption">山川-华山</div>
         </div>
         <div class="item">
-            <img src="{{ site.ASSETS }}/images/沙漠.png" alt="First slide">
+            <img id="picture2-simple" src="{{ site.ASSETS }}/images/沙漠-simple.jpg" alt="First slide">
+            <img id="picture2" src="{{ site.ASSETS }}/images/沙漠.png" alt="First slide">
+            <script>$("#picture2").hide()</script>
             <div class="carousel-caption">沙漠-库布齐</div>
         </div>
     </div>
@@ -39,4 +45,15 @@ title2: 一蓑烟雨任平生。
         <span class="sr-only">Next</span>
     </a>
 </div>
+
+<script>
+for (var i = 0; i < 3; i++) {
+    var hideId = "#picture" + i + "-simple";
+    var showId = "#picture" + i;
+    $(showId).onload = function(){
+        $(hideId).hide();
+        $(showId).show();
+    };
+}
+</script>
 
