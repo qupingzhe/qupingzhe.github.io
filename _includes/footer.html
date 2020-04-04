@@ -25,11 +25,11 @@ $(function(){
     });
 
     // 上侧固定导航栏，鼠标悬空后，自动打开
-    var $dropdownLi = $('li.dropdown');
+    var $dropdownLi = $('nav ul li.dropdown');
     $dropdownLi.mouseover(function() {
-        $(this).addClass('open');
+        $(this).find('div').addClass('show');
     }).mouseout(function() {
-        $(this).removeClass('open');
+        $(this).find('div').removeClass('show');
     });
 
     var new_width = $('.sidebar-outer').width();
