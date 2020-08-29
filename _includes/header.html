@@ -7,7 +7,7 @@
             <a class="nav-link bg-dark dropdown-toggle" href="#" id="nav-algorithm" data-toggle="dropdown">
                 算法系列
             </a>
-            <div class="dropdown-menu bg-secondary">
+            <div class="dropdown-menu bg-light">
                 {% for category in site.categories %}
                     {% if category.first == "introduction_to_algorithms" or
                         category.first == "algorithm" or
@@ -15,7 +15,7 @@
                         <a class="dropdown-item" href='/category.html?name={{ category.first }}'>
                             {% include category.map category=category.first %}
                             &nbsp;&nbsp;
-                            <span class="badge badge-light badge-pill"> {{ category.last.size }}</span>
+                            <span class="badge badge-secondary badge-pill"> {{ category.last.size }}</span>
                         </a>
                     {% endif %}
                 {% endfor %}
@@ -26,7 +26,7 @@
             <a class="nav-link bg-dark dropdown-toggle" href="#" id="nav-else" data-toggle="dropdown">
                 其他<b class="caret"></b>
             </a>
-            <div class="dropdown-menu bg-secondary">
+            <div class="dropdown-menu bg-ligth">
                 {% for category in site.categories %}
                     {% if category.first == "introduction_to_algorithms" or
                         category.first == "algorithm" or
@@ -36,7 +36,7 @@
                     <a class="dropdown-item" href='/category.html?name={{ category.first }}'>
                         {% include category.map category=category.first %}
                         &nbsp;&nbsp;
-                        <span class="badge badge-light badge-pill"> {{ category.last.size }}</span>
+                        <span class="badge badge-secondary badge-pill"> {{ category.last.size }}</span>
                     </a>
                 {% endfor %}
             </div>

@@ -24,7 +24,7 @@ layout: default
         {% if i == size %}{% break %}{% endif %}
         {% assign page = site.categories[category][i] %}
         <div class="col-sm-12">
-            <div class="card mb-4">
+            <div class="card bg-light mb-4">
                 <div class="card-header bg-ligth">
                     <div id="{{ category }}-{{ page.id }}" name="toc-target-{{ category }}">
                     {{ page.title }}
