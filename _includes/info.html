@@ -1,37 +1,37 @@
 <center>
-<div id="info" class="panel">
+<div id="info" class="card">
     <div id="overlay" class="overlay"></div>
     <div id="overlay-fixed" class="overlay-fixed">
-        <img class="img-responsiv img-circle img-thumbnail" src="{{ site.ASSETS }}/images/photo.png" />
+        <img class="img-responsiv rounded-circle img-thumbnail" src="{{ site.ASSETS }}/images/photo.png" />
     </div>
-    <div class="panel-heading">
-        <div class="row">
-            <h3 class="page-header">隐藏在画中的落叶</h3>
-        </div>
+    <div class="card-header bg-white">
+        <h3 class="card-title">隐藏在画中的落叶</h3>
     </div>
-    <div class="panel-body">
-        <!--<br/>-->
-        <div class="row">
-            <div class="well well-lg" style="font-family: 颜真卿">
-                去往天堂，路过人间
+    <div class="card-body pl-0 pr-0">
+        <br/>
+        <div class="row"><div class="col-sm-12 ml-0 mr-0">
+            <div class="card bg-light" style="font-family: 颜真卿">
+                <div class="card-body">
+                    去往天堂，路过人间
+                </div>
             </div>
-        </div>
-        <br/>
-        <div class="row">
+        </div></div>
+        <!--<br/>-->
+        <div class="row"><div class="col-sm-12">
             <a style="text-decoration:none;" href="#" data-toggle="modal" data-target="#tagModal">标签检索</a>
-        </div>
+        </div></div>
         <br/>
-        <div class="row">
+        <div class="row"><div class="col-sm-12">
             <a href="/latest_posts.html">
-                <span class="badge">{{ site.LATEST_SIZE }}</span>
+                <span class="badge badge-secondary badge-pill">{{ site.LATEST_SIZE }}</span>
                 近期文章</a>
             /
             <a href="/all_posts.html">所有文章
-                <span class="badge">{{ site.posts.size }}</span>
+                <span class="badge badge-secondary badge-pill">{{ site.posts.size }}</span>
             </a>
-        </div>
+        </div></div>
         <br/>
-        <div class="row">
+        <div class="row"><div class="col-sm-12">
             <div style="float: none;display: inline-block;vertical-align: middle;">
                 <ul class="social-network social-circle">
                     <li>
@@ -44,7 +44,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div></div>
     </div>
 </div>
 </center>

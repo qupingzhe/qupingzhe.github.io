@@ -1,49 +1,46 @@
-<nav class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="/index">Qpz</a>
-    </div>
-    <div>
-        <ul class="nav navbar-nav">
-            <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                    算法系列 <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
+<nav class="navbar navbar-inverse navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <!--<nav class="navbar-inverse navbar-default navbar-fixed-top" role="navigation">-->
+
+    <a class="navbar-brand" href="/index">Qpz</a>
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown bg-dark">
+            <a class="nav-link bg-dark dropdown-toggle" href="#" id="nav-algorithm" data-toggle="dropdown">
+                算法系列
+            </a>
+            <div class="dropdown-menu bg-light">
                 {% for category in site.categories %}
                     {% if category.first == "introduction_to_algorithms" or
                         category.first == "algorithm" or
                         category.first == "leetcode" %}
-                        <li><a href='/category.html?name={{category.first}}'>
-                                {% include category.map category=category.first %}
-                                &nbsp;&nbsp;
-                                <span class="badge"> {{ category.last.size }} </span>
-                        </a></li>
+                        <a class="dropdown-item" href='/category.html?name={{ category.first }}'>
+                            {% include category.map category=category.first %}
+                            &nbsp;&nbsp;
+                            <span class="badge badge-secondary badge-pill"> {{ category.last.size }}</span>
+                        </a>
                     {% endif %}
                 {% endfor %}
-                </ul>
-            </li>
 
-            <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                   其他<b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link bg-dark dropdown-toggle" href="#" id="nav-else" data-toggle="dropdown">
+                其他<b class="caret"></b>
+            </a>
+            <div class="dropdown-menu bg-ligth">
                 {% for category in site.categories %}
                     {% if category.first == "introduction_to_algorithms" or
                         category.first == "algorithm" or
                         category.first == "leetcode" %}
                         {% continue %}
                     {% endif %}
-                    <li><a href='/category.html?name={{category.first}}'>
-                            {% include category.map category=category.first %}
-                            &nbsp;&nbsp;
-                            <span class="badge"> {{ category.last.size }} </span>
-                    </a></li>
+                    <a class="dropdown-item" href='/category.html?name={{ category.first }}'>
+                        {% include category.map category=category.first %}
+                        &nbsp;&nbsp;
+                        <span class="badge badge-secondary badge-pill"> {{ category.last.size }}</span>
+                    </a>
                 {% endfor %}
-                </ul>
-            </li>
-        </ul>
-    </div>
-    </div>
+            </div>
+        </li>
+
+    </ul>
 </nav>
