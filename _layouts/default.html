@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
+
 <body style="padding-top:60px" data-spy="scroll" data-target="#myScrollspy">
-    <div class="container-fiuled">
-        {% include header.html %}
-        <div class = "row" >
-            <div id="info-col" class='col-sm-3 sidebar-outer'>
-                <div class="row sidebar">
-                    {% include info.html %}
-                </div>
-            </div>
+{% include header.html %}
 
-            <div class="col-sm-2 col-sm-push-7 sidebar-outer" id="myScrollspy">
-                <div class="row sidebar pre-scrollable" style="max-height: 80%;">
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-
-                    <div id="pre-toc"><div class="panel panel-default">
-                        <div class="panel-body"><div id="toc"></div></div>
-                    </div></div>
-                </div>
-            </div>
-            <script>$("#pre-toc").hide()</script>
-            <div class="col-sm-7 col-sm-pull-2">{{ content }}</div>
+<div class="container-fiuled">
+    <div class = "row" >
+        <div id="info-col" class='col-sm-3 sidebar-outer'>
+            <div class="row sidebar"><div class="col-md-12">
+                {% include info.html %}
+            </div></div>
         </div>
-        {% include footer.html %}
+
+        <div class="col-sm-2 order-sm-11 sidebar-outer" id="myScrollspy">
+            <div class="row sidebar pre-scrollable" style="max-height: 80%;">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+                <div id="pre-toc"><div class="card">
+                    <div class="card-body"><div id="toc"></div></div>
+                </div></div>
+            </div>
+        </div>
+        <script>$("#pre-toc").hide()</script>
+        <div class="col-sm-7 order-sm-4">{{ content }}</div>
     </div>
+    {% include footer.html %}
+</div>
+
 {% include tag_search.html allTag=site.tags %}
+
 </body>
 </html>

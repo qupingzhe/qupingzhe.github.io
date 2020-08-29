@@ -17,33 +17,31 @@ layout: default
 {% for category in categoryList%}
 {% assign next_category = categoryList[forloop.index] %}
 <div id='{{ category }}'>
-    <div class="page-heading">
-        <h1>{% include category.map category=category %}</h1>
-    </div>
+    <h1>{% include category.map category=category %}</h1>
     <div class="row">
     {% assign size = site.categories[category].size  %}
     {% for i in (0..size) %}
         {% if i == size %}{% break %}{% endif %}
         {% assign page = site.categories[category][i] %}
         <div class="col-sm-12">
-            <div class="panel panel-danger">
-                <div class="panel-heading">
+            <div class="card mb-4">
+                <div class="card-header bg-ligth">
                     <div id="{{ category }}-{{ page.id }}" name="toc-target-{{ category }}">
                     {{ page.title }}
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <!--{{ page.content | truncate: 108 }}-->
                     {{ page.excerpt }}
                 </div>
-                <div class="panel-footer">
+                <div class="card-footer">
                     <div class="row">
                         <div class="col-sm-3">
                             {{ page.date | date: "%B %-d, %Y" }}
                         </div>
                         <div class="col-sm-3"></div>
                         <div class="col-sm-3"></div>
-                        <div class="col-sm-3"><a class="btn btn-default" href="{{ page.url | prepend: site.baseurl }}">详情</a></div>
+                        <div class="col-sm-3"><a class="btn btn-info text-white" href="{{ page.url | prepend: site.baseurl }}">详情</a></div>
                     </div>
                 </div>
             </div>
