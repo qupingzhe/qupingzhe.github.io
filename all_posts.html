@@ -3,12 +3,11 @@ layout: default
 title: 所有文章
 ---
 
-<div class="panel">
-    <div class="panel-heading">
+<div class="card">
+    <div class="card-header">
         <h1>所有文章</h1>
-        <hr/>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
     {% assign allPost = site.posts |sort: "date" | reverse %}
     {% for post in site.posts %}
         {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
@@ -33,13 +32,13 @@ title: 所有文章
             <ul>
         {% endif %}
 
-        <li><div class="well well-sm">
-            <span class="label label-info">
+        <li>
+            <span class="badge badge-info">
                 {{ post.date | date: "%Y-%m-%d" }}
             </span>
              &raquo; 
             <a href="{{ post.url }}">{{ post.title }}</a>
-        </div></li>
+        </li>
 
         {% if forloop.last %}
             </ul>
