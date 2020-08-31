@@ -32,6 +32,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
 color: RGB(234, 234, 234)
-#excerpt_separator: "<!--more-->"
+excerpt_separator: "<!--more-->"
 ASSETS: /assets
 LATEST_SIZE: 4
